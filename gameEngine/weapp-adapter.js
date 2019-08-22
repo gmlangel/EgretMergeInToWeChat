@@ -1130,10 +1130,10 @@
                 };
             }
 
-            wx.onTouchStart(touchEventHandlerFactory('touchstart'));
-            wx.onTouchMove(touchEventHandlerFactory('touchmove'));
-            wx.onTouchEnd(touchEventHandlerFactory('touchend'));
-            wx.onTouchCancel(touchEventHandlerFactory('touchcancel'));
+            wx.onTouchStart = touchEventHandlerFactory('touchstart');
+            wx.onTouchMove = touchEventHandlerFactory('touchmove');
+            wx.onTouchEnd = touchEventHandlerFactory('touchend');
+            wx.onTouchCancel = touchEventHandlerFactory('touchcancel');
 
             /***/
 }),
