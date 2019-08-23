@@ -1,2 +1,2 @@
 <!--index.wxml-->
-<canvas canvas-id="myCanvas" style="width:100%;height:300px;" bindtouchstart="onCanvasTouchStart" bindtouchmove="onCanvasTouchMove" bindtouchend="onCanvasTouchEnd" bindtouchcancel="onCanvasTouchCancel"></canvas>
+<canvas id="myCanvas" type="webgl" style="width:100%;height:300px;" bindtouchstart="onCanvasTouchStart" bindtouchmove="onCanvasTouchMove" bindtouchend="onCanvasTouchEnd" bindtouchcancel="onCanvasTouchCancel"></canvas>

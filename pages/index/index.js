@@ -1,6 +1,5 @@
 //index.js
 //导入游戏库
-require("../../gameEngine/weapp-adapter.js")
 
 //获取应用实例
 const app = getApp()
@@ -10,7 +9,18 @@ Page({
 
   },
   onReady:function(){
-    
+    //模拟wx.createCanvas返回rootCanvas
+    //获取主场景canvas
+    const query = wx.createSelectorQuery()
+    query.select('#myCanvas').node().exec((res) => {
+      console.log("rootCanvas获取成功");
+      const gcanvas = res[0].node
+      wx.createCanvas = function () {
+        return gcanvas;
+      }
+      //注册游戏引擎相关的脚本
+      require("../../gameEngine/weapp-adapter.js")
+    })
   },
   onShow:function(){
 
