@@ -55,7 +55,7 @@
 
             function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-            var global = GameGlobal;
+            var global = wx;
 
             function inject() {
                 _window.addEventListener = _window.canvas.addEventListener = function (type, listener) {
@@ -71,39 +71,39 @@
                 // 开发者工具无法重定义 window
 
 
-                if (typeof __devtoolssubcontext === 'undefined' && platform === 'devtools') {
-                    for (var key in _window) {
-                        var descriptor = Object.getOwnPropertyDescriptor(global, key);
+                // if (typeof __devtoolssubcontext === 'undefined' && platform === 'devtools') {
+                //     for (var key in _window) {
+                //         var descriptor = Object.getOwnPropertyDescriptor(global, key);
 
-                        if (!descriptor || descriptor.configurable === true) {
-                            Object.defineProperty(window, key, {
-                                value: _window[key]
-                            });
-                        }
-                    }
+                //         if (!descriptor || descriptor.configurable === true) {
+                //             Object.defineProperty(window, key, {
+                //                 value: _window[key]
+                //             });
+                //         }
+                //     }
 
-                    for (var _key in _window.document) {
-                        var _descriptor = Object.getOwnPropertyDescriptor(global.document, _key);
+                //     for (var _key in _window.document) {
+                //         var _descriptor = Object.getOwnPropertyDescriptor(global.document, _key);
 
-                        if (!_descriptor || _descriptor.configurable === true) {
-                            Object.defineProperty(global.document, _key, {
-                                value: _window.document[_key]
-                            });
-                        }
-                    }
-                    window.parent = window;
-                } else {
+                //         if (!_descriptor || _descriptor.configurable === true) {
+                //             Object.defineProperty(global.document, _key, {
+                //                 value: _window.document[_key]
+                //             });
+                //         }
+                //     }
+                //     window.parent = window;
+                // } else {
                     for (var _key2 in _window) {
                         global[_key2] = _window[_key2];
                     }
                     global.window = _window;
-                    window = global;
+                    var window = global;
                     window.top = window.parent = window;
-                }
+                //}
             }
 
-            if (!GameGlobal.__isAdapterInjected) {
-                GameGlobal.__isAdapterInjected = true;
+            if (!wx.__isAdapterInjected) {
+                wx.__isAdapterInjected = true;
                 inject();
             }
 
@@ -209,9 +209,8 @@
             exports.setInterval = setInterval;
             exports.clearTimeout = clearTimeout;
             exports.clearInterval = clearInterval;
-            exports.requestAnimationFrame = requestAnimationFrame;
-            exports.cancelAnimationFrame = cancelAnimationFrame;
-
+            exports.requestAnimationFrame = canvas.requestAnimationFrame;
+            exports.cancelAnimationFrame = canvas.cancelAnimationFrame;
             /***/
 }),
 /* 2 */

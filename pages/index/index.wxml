@@ -1,2 +1,3 @@
 <!--index.wxml-->
-<canvas id="myCanvas" type="webgl" style="width:100%;height:300px;" bindtouchstart="onCanvasTouchStart" bindtouchmove="onCanvasTouchMove" bindtouchend="onCanvasTouchEnd" bindtouchcancel="onCanvasTouchCancel"></canvas>
+<canvas id="myCanvas" type="webgl" style="width:100%;height:300px;"></canvas>
+ <!-- bindtouchstart="onCanvasTouchStart" bindtouchmove="onCanvasTouchMove" bindtouchend="onCanvasTouchEnd" bindtouchcancel="onCanvasTouchCancel" 临时屏蔽，否则看不到手机上的日志-->

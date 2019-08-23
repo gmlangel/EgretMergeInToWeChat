@@ -20,6 +20,8 @@ Page({
       }
       //注册游戏引擎相关的脚本
       require("../../gameEngine/weapp-adapter.js")
+      //require('../../gameEngine/platform.js');
+      //require('../../gameEngine/manifest.js');
     })
   },
   onShow:function(){
